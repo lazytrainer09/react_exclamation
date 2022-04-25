@@ -1,0 +1,18 @@
+$ node 02-sec/javascripts/hoisting.js 
+100
+
+# varで実行
+$ node 02-sec/javascripts/scope.js 
+50
+50
+100
+
+# constで実行
+$ node 02-sec/javascripts/scope.js
+50
+0
+/Users/futami/workspace/react_exclamation/02-sec/javascripts/scope.js:10
+console.log(m);
+            ^
+
+ReferenceError: m is not defined
