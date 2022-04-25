@@ -1,8 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # hello-world/dependencies
-01-env/hello-world/node_modules
-01-env/hello-world/build
+01-sec/hello-world/*
 .pnp
 .pnp.js
 
