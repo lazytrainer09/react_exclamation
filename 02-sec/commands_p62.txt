@@ -1,0 +1,12 @@
+$ node
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> const str1 = 'Serval1';
+undefined
+> const str2 = new String('Serval1');
+undefined
+> str1 == str2
+true
+> str1 === str2
+false
+> str1 === str2.valueOf()
