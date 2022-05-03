@@ -1,0 +1,60 @@
+# p66-1
+> const rand = Math.floor(Math.random()*10);
+undefined
+> rand
+4
+> const judge = if (rand % 2 == 0) `even` else `odd`;
+const judge = if (rand % 2 == 0) `even` else `odd`;
+
+# p66-2
+const judge = rand % 2 == 0 ? `even` : `odd`;
+undefined
+> judge
+'even'
+
+# p67-1
+> function double(n) {
+... return n * 2;
+... }
+undefined
+> double(4)
+8
+> const twice = function (n) {
+... return n * 2;
+... }
+undefined
+> twice(3)
+6
+
+# p67, 68
+$ node 02-sec/javascripts/fn-statement.js 
+bar
+
+# p68-2
+> fn.__proto__.constructor.name
+'Function'
+> fn.__proto__.__proto__.constructor.name
+'Object'
+
+# p69-1
+> const sum = new Function('n', 'm', 'return n + m;');
+undefined
+> sum(3, 4)
+7
+> const add = function(n, m){
+... return n + m;
+... };
+undefined
+> add(4, 5)
+9
+
+# p69-2
+> const foo = {
+... bar: 'bar',
+... baz: function(){
+..... console.log('I am `baz` method');
+..... },
+... };
+undefined
+> foo.baz();
+I am `baz` method

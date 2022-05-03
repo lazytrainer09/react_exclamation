@@ -1,0 +1,15 @@
+> const obj = { a: 256 };
+undefined
+> const arr = [7,8,9];
+undefined
+> const regex = /^say\shello/ig;
+undefined
+> obj.__proto__.constructor.name
+'Object'
+> arr.__proto__.constructor.name
+'Array'
+> arr.__proto__.__proto__.constructor.name
+'Object'
+> regex.__proto__.constructor.name
+'RegExp'
+> regex.__proto__.__proto__.constructor.name

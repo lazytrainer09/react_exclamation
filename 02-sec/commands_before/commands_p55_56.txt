@@ -1,0 +1,32 @@
+# nodeの実行
+$ node
+# varの動作確認
+> var a = 1;
+undefined
+> a
+1
+> a = 2;
+2
+> a
+2
+> var a = 3;
+> a
+3
+
+# letの動作確認
+> let b = 1;
+undefined
+> b = 2;
+2
+> b
+2
+> let b = 3; # 再宣言NG
+Uncaught SyntaxError: Identifier 'b' has already been declared
+
+# constの動作確認
+> const c = 1;
+undefined
+> c = 2; # 再代入NG
+Uncaught TypeError: Assignment to constant variable.
+> const c = 3; # 再宣言NG
+Uncaught SyntaxError: Identifier 'c' has already been declared

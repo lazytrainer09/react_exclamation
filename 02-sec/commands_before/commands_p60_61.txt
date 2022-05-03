@@ -1,0 +1,5 @@
+$ node
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> 'Serval lives in savanna'.replace('savanna', 'jungle');
+'Serval lives in jungle'

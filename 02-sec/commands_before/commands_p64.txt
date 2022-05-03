@@ -1,0 +1,25 @@
+$ node 
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> const arr1 = [1, 2, 3];
+undefined
+> const arr2 = new Array(1, 2, 3);
+undefined
+> console.log(arr1, arr2);
+[ 1, 2, 3 ] [ 1, 2, 3 ]
+
+> const obj1 = {};
+undefined
+> const obj2 = new Object();
+undefined
+> console.log(obj1, obj2);
+{} {}
+undefined
+
+> const regex1 = /pattern/i;
+undefined
+> const regex2 = new RegExp('pattern', 'i');
+undefined
+> console.log(regex1, regex2);
+/pattern/i /pattern/i
+undefined

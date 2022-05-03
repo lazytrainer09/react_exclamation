@@ -1,0 +1,16 @@
+$ node
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> let val = 100;
+undefined
+> val = 'foo';
+'foo'
+> .exit
+
+$ ts-node
+> let val:number = 100;
+undefined
+> val = 256;
+256
+> val = 'foo';
+<repl>.ts:6:1 - error TS2322: Type 'string' is not assignable to type 'number'.
