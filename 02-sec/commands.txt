@@ -58,3 +58,53 @@ undefined
 undefined
 > foo.baz();
 I am `baz` method
+
+# p70-1
+> const fuu = {
+... bar: 'bar',
+... baz(){
+..... console.log('I am `baz` method');
+..... },
+... };
+undefined
+> fuu.baz();
+I am `baz` method
+
+# p72-1
+> function mercury() {}
+undefined
+> mercury.name
+'mercury'
+> const fn = function mars(){};
+undefined
+> fn.name
+'mars'
+
+# p72-2
+> (function(){}).name
+''
+> (()=>{}).name
+
+# p72-3
+> const venus = function(){ console.log('I am Venus!'); };
+undefined
+> venus()
+I am Venus!
+undefined
+> venus.name
+'venus'
+
+> const jupiter = () => { console.log('I am Jupiter!') };
+undefined
+> jupiter()
+I am Jupiter!
+undefined
+> jupiter.name
+'jupiter'
+
+$ node 
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> .load bird-class.js
+> typeof Bird
+'function'
