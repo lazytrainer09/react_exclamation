@@ -102,9 +102,76 @@ undefined
 > jupiter.name
 'jupiter'
 
+# p77
 $ node 
 Welcome to Node.js v14.4.0.
 Type ".help" for more information.
 > .load bird-class.js
 > typeof Bird
 'function'
+
+# p78
+$ node --version
+v14.4.0
+
+$ node
+Welcome to Node.js v14.4.0.
+Type ".help" for more information.
+> [1, 2, 3].__proto__
+[]
+> { foo: 'bar' }.__proto__
+{}
+> 'JavaScript'.__proto__
+[String: '']
+> (65536).__proto__
+[Number: 0]
+
+# p78, 79
+> new Array(1, 2, 3);
+[ 1, 2, 3 ]
+> typeof Array
+'function'
+> Array.prototype
+[]
+> new String('JavaScript');
+[String: 'JavaScript']
+> typeof String
+'function'
+> String.prototype
+[String: '']
+
+# p79-1
+> Number.prototype.toString();
+'0'
+> (100).toString();
+'100'
+> String.prototype.replace('', 'blank');
+'blank'
+> 'LiveScript'.replace('Live', 'Java');
+'JavaScript'
+
+# p79-2
+$ node
+> .load bird-class.js
+> hawk.__proto__
+FlyableBird {}
+> hawk.__proto__.__proto__
+Bird {}
+> hawk.__proto__.__proto__.__proto__
+{}
+> hawk.__proto__.__proto__.__proto__.__proto__
+null
+
+# p80-1
+> Object.prototype.toString();
+'[object Object]'
+> hawk.toString();
+'[object Object]'
+> Bird.prototype.toString = function() { return `Bird { name: ${this.name} }`; };
+[Function (anonymous)]
+> hawk.toString();
+'Bird { name: タカ }'
+> delete Bird.prototype.toString;
+true
+> hawk.toString();
+'[object Object]'
