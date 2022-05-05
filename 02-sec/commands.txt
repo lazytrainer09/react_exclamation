@@ -175,3 +175,13 @@ null
 true
 > hawk.toString();
 '[object Object]'
+
+# p92
+> const obj = {};
+undefined
+> obj.foo
+undefined
+> obj.foo.bar
+Uncaught TypeError: Cannot read property 'bar' of undefined
+> obj?.foo?.bar
+undefined
