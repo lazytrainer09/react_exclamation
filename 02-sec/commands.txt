@@ -291,3 +291,37 @@ undefined
     [Symbol(nodejs.util.promisify.custom)]: [Function (anonymous)]
   }
 }
+
+# p107
+# cd 01-sec/hello-world
+> import React from 'react';
+import React from 'react';
+^^^^^^
+
+Uncaught SyntaxError: Cannot use import statement outside a module
+> const React = require('react');
+undefined
+> React.createElement('div', null, 'foo');
+{
+  '$$typeof': Symbol(react.element),
+  type: 'div',
+  key: null,
+  ref: null,
+  props: { children: 'foo' },
+  _owner: null,
+  _store: {}
+}
+
+# p108
+$ cd 02-sec/cjs
+$ node
+> const moon = require('./moon');
+undefined
+> moon.transform();
+Moon prism power, make up!
+undefined
+> const { transform, finish } = require('./venus');
+undefined
+> transform(); finish();
+Venus power, make up!
+Crescent beam!
