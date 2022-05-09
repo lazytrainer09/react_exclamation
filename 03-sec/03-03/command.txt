@@ -1,0 +1,32 @@
+# p138
+$ node
+> .load open-counter.js
+> increment();
+1
+> increment();
+2
+> increment();
+3
+
+# p139
+$ node
+> .load closure-counter.js
+> const increment = counter();
+undefined
+> count
+Uncaught ReferenceError: count is not defined
+> increment();
+1
+> increment();
+2
+
+# p139-2
+$ node
+> const counter = (count = 0) => (adds = 1) => count += adds;
+undefined
+> const increment = counter();
+undefined
+> increment();
+1
+> increment(2);
+3
