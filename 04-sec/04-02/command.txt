@@ -1,0 +1,46 @@
+# p156
+$ ts-node
+> let n: number = 3;
+undefined
+> n = 'foo';
+<repl>.ts:5:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+5 n = 'foo';
+  ~
+
+> if (n) console.log('`n` is truthy');
+`n` is truthy
+undefined
+
+# p156-2
+$ node
+> const s = '123';
+undefined
+> const n = 456;
+undefined
+> s*3
+369
+> 246/s
+2
+> s+n
+'123456'
+
+$ ts-node
+> const s = '123';
+undefined
+> const n = 456;
+undefined
+> s*3
+<repl>.ts:6:1 - error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+6 s*3
+  ~
+
+> 246/s
+<repl>.ts:6:5 - error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+6 246/s
+      ~
+
+> s+n
+'123456'
