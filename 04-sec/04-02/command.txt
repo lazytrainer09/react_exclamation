@@ -44,3 +44,31 @@ undefined
 
 > s+n
 '123456'
+
+# p158
+> const numArr: number[] = [1, 2, 3];
+undefined
+> numArr
+[ 1, 2, 3 ]
+> numArr[0] = 11;
+11
+> numArr[0] = "hello";
+<repl>.ts:7:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+7 numArr[0] = "hello";
+  ~~~~~~~~~
+
+> const strArr: Array<string> = ['one', 'two', 'three'];
+undefined
+> strArr
+[ 'one', 'two', 'three' ]
+
+# p159
+> const words: object = ['foo', 'bar', 'baz'];
+undefined
+> words
+[ 'foo', 'bar', 'baz' ]
+> const red: { rgb: string, opacity: number } = { rgb: 'ff0000', opacity: 1 };
+undefined
+> red
+{ rgb: 'ff0000', opacity: 1 }
