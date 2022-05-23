@@ -159,3 +159,13 @@ undefined
 undefined
 > console.log(id, username, isAdmin);
 1 patty true
+
+# p164
+> let val: any = 100;
+undefined
+> val
+100
+> val = 'buz';
+'buz'
+> val = null;
+null
