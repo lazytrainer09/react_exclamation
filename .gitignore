@@ -5,6 +5,9 @@
 .pnp
 .pnp.js
 
+# 04-sec/node_modules
+04-sec/node_modules
+
 # testing
 /coverage
 
