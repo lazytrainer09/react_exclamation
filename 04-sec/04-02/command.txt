@@ -1,0 +1,171 @@
+# p156
+$ ts-node
+> let n: number = 3;
+undefined
+> n = 'foo';
+<repl>.ts:5:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+5 n = 'foo';
+  ~
+
+> if (n) console.log('`n` is truthy');
+`n` is truthy
+undefined
+
+# p156-2
+$ node
+> const s = '123';
+undefined
+> const n = 456;
+undefined
+> s*3
+369
+> 246/s
+2
+> s+n
+'123456'
+
+$ ts-node
+> const s = '123';
+undefined
+> const n = 456;
+undefined
+> s*3
+<repl>.ts:6:1 - error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+6 s*3
+  ~
+
+> 246/s
+<repl>.ts:6:5 - error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+6 246/s
+      ~
+
+> s+n
+'123456'
+
+# p158
+> const numArr: number[] = [1, 2, 3];
+undefined
+> numArr
+[ 1, 2, 3 ]
+> numArr[0] = 11;
+11
+> numArr[0] = "hello";
+<repl>.ts:7:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+7 numArr[0] = "hello";
+  ~~~~~~~~~
+
+> const strArr: Array<string> = ['one', 'two', 'three'];
+undefined
+> strArr
+[ 'one', 'two', 'three' ]
+
+# p159
+> const words: object = ['foo', 'bar', 'baz'];
+undefined
+> words
+[ 'foo', 'bar', 'baz' ]
+> const red: { rgb: string, opacity: number } = { rgb: 'ff0000', opacity: 1 };
+undefined
+> red
+{ rgb: 'ff0000', opacity: 1 }
+
+> interface Color {
+... readonly rgb: string;
+... opacity: number;
+... name?: string;
+... }
+undefined
+> const turquoise: Color = { rgb: '00afcc', opacity: 1 };
+undefined
+> turquoise.name = 1
+<repl>.ts:10:1 - error TS2322: Type 'number' is not assignable to type 'string'.
+
+10 turquoise.name = 1
+   ~~~~~~~~~~~~~~
+
+> turquoise.name = 'Turquoise Blue';
+'Turquoise Blue'
+> turquoise.rgb = '03c1ff';
+<repl>.ts:11:11 - error TS2540: Cannot assign to 'rgb' because it is a read-only property.
+
+11 turquoise.rgb = '03c1ff';
+
+# p161-1
+> enum Pet { Cat, Dog, Rabbit }
+> console.log(Pet.Cat, Pet.Dog, Pet.Rabbit);
+0 1 2
+> let Tom: Pet = Pet.Cat;
+undefined
+> console.log(Tom);
+0
+undefined
+> Tom = Pet.Dog;
+1
+> Tom = 12;
+12
+> console.log(Tom);
+12
+> enum Pet {
+... Cat = 'Cat',
+... Dog = 'Dog',
+... Rabbit = 'Rabbit',
+... }
+undefined
+> let Tom: Pet = Pet.Cat;
+undefined
+> Tom = 'Hamster';
+<repl>.ts:10:1 - error TS2322: Type '"Hamster"' is not assignable to type 'Pet'.
+
+10 Tom = 'Hamster';
+   ~~~
+
+> Tom = 'Dog';
+<repl>.ts:10:1 - error TS2322: Type '"Dog"' is not assignable to type 'Pet'.
+
+10 Tom = 'Dog';
+
+> let Tom: 'Cat' = 'Cat';
+undefined
+> Tom = 'Dog';
+<repl>.ts:5:1 - error TS2322: Type '"Dog"' is not assignable to type '"Cat"'.
+
+5 Tom = 'Dog';
+
+> let Mary: 'Cat' | 'Dog' | 'Rabbit' = 'Cat';
+undefined
+> Mary = 'Rabbit';
+'Rabbit'
+> Mary = 'Parrot';
+<repl>.ts:7:1 - error TS2322: Type '"Parrot"' is not assignable to type '"Cat" | "Dog" | "Rabbit"'.
+
+7 Mary = 'Parrot';
+
+# p163
+> const charAttrs: [number, string, boolean] = [1, 'patty', true];
+undefined
+> charAttrs;
+[ 1, 'patty', true ]
+> const spells: [number, ...string[]] = [7, 'heal', 'sizz', 'snooz'];
+undefined
+> spells;
+[ 7, 'heal', 'sizz', 'snooz' ]
+> const userAttrs: [number, string, boolean] = [1, 'patty', true];
+undefined
+> const [id, username, isAdmin] = userAttrs;
+undefined
+> console.log(id, username, isAdmin);
+1 patty true
+
+# p164
+> let val: any = 100;
+undefined
+> val
+100
+> val = 'buz';
+'buz'
+> val = null;
+null
