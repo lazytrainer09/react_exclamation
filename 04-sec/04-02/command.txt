@@ -143,3 +143,19 @@ undefined
 <repl>.ts:7:1 - error TS2322: Type '"Parrot"' is not assignable to type '"Cat" | "Dog" | "Rabbit"'.
 
 7 Mary = 'Parrot';
+
+# p163
+> const charAttrs: [number, string, boolean] = [1, 'patty', true];
+undefined
+> charAttrs;
+[ 1, 'patty', true ]
+> const spells: [number, ...string[]] = [7, 'heal', 'sizz', 'snooz'];
+undefined
+> spells;
+[ 7, 'heal', 'sizz', 'snooz' ]
+> const userAttrs: [number, string, boolean] = [1, 'patty', true];
+undefined
+> const [id, username, isAdmin] = userAttrs;
+undefined
+> console.log(id, username, isAdmin);
+1 patty true
