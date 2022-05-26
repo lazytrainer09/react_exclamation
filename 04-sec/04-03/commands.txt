@@ -1,0 +1,19 @@
+# p169
+> const toArray = <T>(arg1: T, arg2: T): T[] => [arg1, arg2];
+> toArray(8, 3);
+[ 8, 3 ]
+
+> toArray('foo', 'bar');
+[ 'foo', 'bar' ]
+
+> toArray(5, 'bar');
+<repl>.ts:7:12 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+# p170
+> const toArrayVariably = <T>(...args: T[]): T[] => [...args];
+undefined
+> toArrayVariably(1, 2, 3, 4, 5);
+[ 1, 2, 3, 4, 5 ]
+> toArrayVariably(6, '7', 8);
+<repl>.ts:10:20 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
