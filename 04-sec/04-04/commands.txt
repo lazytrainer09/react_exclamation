@@ -1,0 +1,17 @@
+# p180
+> let id: number | string = 208239;
+> id
+208239
+> id = 'abceijgorjkj-1234-jfjo';
+'abceijgorjkj-1234-jfjo'
+> id
+'abceijgorjkj-1234-jfjo'
+
+# p182
+$ ts-node
+> type Some = number & string;
+undefined
+> let id: Some;
+undefined
+> id = 100;
+<repl>.ts:6:1 - error TS2322: Type 'number' is not assignable to type 'never'.
